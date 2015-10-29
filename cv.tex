@@ -61,6 +61,17 @@
 
 %\setsansfont[LetterSpace=3, Numbers={Proportional,OldStyle}]{Myriad Pro}
 
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newenvironment{mycvline}{
+      \begin{tabular*}{\textwidth}{ R{\hintscolumnwidth}
+	    @{\extracolsep{\columnsep}}l}
+   }{
+\end{tabular*}
+}
 
 %\SetProtrusion
 %   [ name     = min-eu2 ]
@@ -76,7 +87,11 @@
 
 
 
-
+\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}
+%\newcommand{\website}[1]{\href{#1}{\texttt{#1}}}
+\newcommand{\website}[2]{\href{#1#2}{\texttt{#2}}}
+\newcommand{\skype}[1]{\href{skype:#1?userinfo}{#1}}%
+   % http://stackoverflow.com/questions/16177332/create-application-link-to-skype-profile
 % personal data
 \firstname{Alessandro}
 \familyname{Candolini}
@@ -86,12 +101,21 @@
  Curriculum Vit\ae
 }
 \address{via Monte Grappa~44}{33100 Udine (Italy)}    
-\mobile{+39~333~4387420}
+\mobile{(+39)~333~4387420}
 \phone{Skype: alessandro.candolini}
 %\fax{+3~(456)~789~012}                        
 \email{alessandro.candolini@gmail.com}
 %\homepage{www.johndoe.com}                    
 %\extrainfo{additional information}            
+%\extrainfo{%
+%   \begin{tabular}{c}
+%   Linkedin:  \website{https://}{www.linkedin.com/in/alessandrocandolini} \\
+%   Bitbucket:  \website{https://}{bitbucket.org/acando86}\\
+%   Stackoverflow: 
+%   \website{http://}{stackoverflow.com/users/5477611/alessandro-candolini} \\
+%   Kaggle profile:  \website{http://}{www.kaggle.com/alessandrocandolini}
+%\end{tabular}
+%}
 %\photo[64pt][0pt]{profile2}
 \photo[64pt][0pt]{foto2}
 % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
@@ -124,29 +148,77 @@
 %\cvitem{supervisors}{Prof. E.~Milotti}
 %\cvitem{description}{
 
+%\begin{tabular*}{7in}{l@{\extracolsep{\fill}}l}
+
+I am an Italian theoretical particle physicist with heavy mathematical
+background, problem-solving attitude, and passion for statistical data
+analysis, simulation and software development.
+My current interest is in data science and I am looking for a position sitting at the crossroad
+between 
+modern machine learning algorithms, traditional statistics and the computational
+challenges of writing code to process effectively massive datasets. 
+I firmly believe in the future of this exiting and cross-disciplinary field and at the same time I think it is
+close to my academic background  and fits my skills. 
+My ideal job would involve working in a stimulating, innovative,
+environment where I can give
+valuable insights that help the 
+company to grow  and at the same time where I can  
+improve myself and my knowledge.
+
+
+\section{Contact information}
+
+\begin{mycvline}
+     Home address: & via Monte Grappa 44, 33100, Udine, Italy  \\
+      E-mail: & \mail{alessandro.candolini@gmail.com} \\
+    Mobile phone: & 
+    \href{tel:00393334387420}{(+39)~333~4387420}\\
+    Skype: & \skype{alessandro.candolini} \\
+    Linkedin: & \website{https://}{www.linkedin.com/in/alessandrocandolini}  \\
+    Bitbucket:  & \website{https://}{bitbucket.org/acando86} \\
+    Stackoverflow:  & 
+   \website{http://}{stackoverflow.com/users/5477611/alessandro-candolini} \\
+    Kaggle profile:  & \website{http://}{www.kaggle.com/alessandrocandolini}
+\end{mycvline}
+
+
+
 \section{Work experiences}
-\cventry{September 2014 -- now}{Spotlime}{Mobile software engineer}{Milan, Italy}{}{
+\cventry{September 2014 -- present}{Spotlime}{Mobile software engineer}{Milan, Italy}{}{
    I am responsible of the implementation design, development, QA and
    release of 
    native Android application for Spotlime, a startup that
    provides an app to discover the best events in Milan and Rome. 
-   %Functionality includes: Fragments to deliver a fluent user experience,
-   %database, geolocation service and maps, FB login, paypal payment, analytics.
-   Experience in: client-server synchronization, sqlite, 
-   activity-service communication, credit card payment, integration
-   with social channels,
-   analytics, maps and geolocation. 
-   Knowdledge of SDKs: Facebook, Google Play Services, AppsFlyer, android
-   ORMLite, GSon, EventBus.
-   Working alongside marketing team to deliver a product closer
+   \textbf{My duties and responsibilities}:
+   \begin{itemize}
+      \item develop from scratch the production-level Android native application  for Spotlime;
+      \item provide level of effort to support new functionalities and
+	 implement them, 
+      choosing the best implementation strategy, reviewing suitable libreries,
+      and evaluating the best way to
+	 achieve the expected behavior;
+      \item test and bug fixing;
+      \item 
+   work alongside marketing team to deliver a product closer
    to real user
    needs, promoting solutions that helps improving user experience in response
    to end user feedback and analytics data. 
-   Working alongside server-side and iOS developers to coordinate the upcoming
+      \item 
+   work alongside server-side and iOS developers to coordinate the upcoming
    releases.
+   \end{itemize}
+   %Functionality includes: Fragments to deliver a fluent user experience,
+   %database, geolocation service and maps, FB login, paypal payment, analytics.
+   \textbf{Techonology used:}
+   Android SDK, 
+   Android Studio IDE, Eclipse IDE, Facebook SDK, Google Play Services SDK,
+   ApplsFlyer, Support Library, ORMLite, sqlite, GSon,  eventbus.
+   Experience in: client-server synchronization,  multithreading, 
+   credit card payment, integration with social channels,
+   analytics, maps and geolocation. 
    Company website:
    \url{http://www.spotlimeapp.com/it/home/}.
-   The app is freely downloadable from Google play store: 
+   The app is freely available from Google play store: 
    \url{https://play.google.com/store/apps/details?id=com.gooutsrl&hl=en}
 }
 %\cventry{July 2015 -- present}{Freelance}{Part-time web developer}{Udine,
@@ -162,7 +234,8 @@
       have soon become
    quality assurance team leader at Usablenet, a multichannel technology
    company. 
-   My roles include:
+   \\
+   \textbf{My duties and responsibilities}:
    \begin{itemize}
 \item 
   working in synergy with  web
