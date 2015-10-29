@@ -1,24 +1,12 @@
 
-\documentclass[10pt,a4paper]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
-
-
-% moderncv themes
+\documentclass[10pt,a4paper]{moderncv}   
 \moderncvstyle{casual}                        
 %\moderncvstyle{classic}                        
 %\moderncvstyle{oldstyle}                        
 %\moderncvstyle{banking}    
-% style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{blue}                          
 % color 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 
-%\renewcommand{\familydefault}{\sfdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-
-%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
-
-% character encoding
-%\usepackage[utf8]{inputenc}                  % if you are not using xelatex ou lualatex, replace by the encoding you are using
-
-% adjust the page margins
 \usepackage[scale=0.75]{geometry}
 \setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}      % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
@@ -30,68 +18,6 @@
 
 %\usepackage{fontspec}
 \usepackage{microtype}
-%\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}
-
-
-%\setmainfont[SmallCapsFeatures={LetterSpace=6}, Numbers={Proportional,OldStyle}]{Minion Pro}
-
-%%
-%\setmainfont[SizeFeatures = {
-%  {Size =     -8.41, OpticalSize = 8},
-%  {Size = 8.41-13.1, OpticalSize = 11},
-%  {Size = 13.1-20.0, OpticalSize = 19},
-%  {Size = 20.0-,     OpticalSize = 72}}
-%]{Minion Pro}
-
-%\setmainfont[
-%SizeFeatures = {
-%  {Size =     -8.41, OpticalSize = 8},
-%  {Size = 8.41-13.1, OpticalSize = 11},
-%  {Size = 13.1-20.0, OpticalSize = 19},
-%  {Size = 20.0-,     OpticalSize = 72}},
-%%Ligatures          = {Required, Common, Contextual, TeX},
-%%Numbers            = {OldStyle, Proportional},
-%%RawFeature         = {expansion  = default},
-%%UprightFeatures    = {RawFeature = {protrusion = mnr}},
-%%BoldFeatures       = {RawFeature = {protrusion = mnrb}},
-%%ItalicFeatures     = {RawFeature = {protrusion = mni}},
-%%BoldItalicFeatures = {RawFeature = {protrusion = mnib}}
-%]{Minion Pro}
-
-
-%\setsansfont[LetterSpace=3, Numbers={Proportional,OldStyle}]{Myriad Pro}
-
-\usepackage{array}
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-
-\newenvironment{mycvline}{
-      \begin{tabular*}{\textwidth}{ R{\hintscolumnwidth}
-	    @{\extracolsep{\columnsep}}l}
-   }{
-\end{tabular*}
-}
-
-%\SetProtrusion
-%   [ name     = min-eu2 ]
-%   { encoding = {EU2},
-%     family   = MinionPro  }
-%   {
-%    {,} = {  ,500},
-%     -  = {  ,500}
-%   }
-%
-
-%\usepackage[fullfamily,opticals,mathlf,onlytext]{MinionPro}
-
-
-
-\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}
-%\newcommand{\website}[1]{\href{#1}{\texttt{#1}}}
-\newcommand{\website}[2]{\href{#1#2}{\texttt{#2}}}
-\newcommand{\skype}[1]{\href{skype:#1?userinfo}{#1}}%
-   % http://stackoverflow.com/questions/16177332/create-application-link-to-skype-profile
 % personal data
 \firstname{Alessandro}
 \familyname{Candolini}
@@ -101,21 +27,12 @@
  Curriculum Vit\ae
 }
 \address{via Monte Grappa~44}{33100 Udine (Italy)}    
-\mobile{(+39)~333~4387420}
+\mobile{+39~333~4387420}
 \phone{Skype: alessandro.candolini}
 %\fax{+3~(456)~789~012}                        
 \email{alessandro.candolini@gmail.com}
 %\homepage{www.johndoe.com}                    
-%\extrainfo{additional information}            
-%\extrainfo{%
-%   \begin{tabular}{c}
-%   Linkedin:  \website{https://}{www.linkedin.com/in/alessandrocandolini} \\
-%   Bitbucket:  \website{https://}{bitbucket.org/acando86}\\
-%   Stackoverflow: 
-%   \website{http://}{stackoverflow.com/users/5477611/alessandro-candolini} \\
-%   Kaggle profile:  \website{http://}{www.kaggle.com/alessandrocandolini}
-%\end{tabular}
-%}
+\extrainfo{\url{}}
 %\photo[64pt][0pt]{profile2}
 \photo[64pt][0pt]{foto2}
 % '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
@@ -148,75 +65,26 @@
 %\cvitem{supervisors}{Prof. E.~Milotti}
 %\cvitem{description}{
 
-%\begin{tabular*}{7in}{l@{\extracolsep{\fill}}l}
-
-I am an Italian theoretical particle physicist with heavy mathematical
-background, problem-solving attitude, and passion for statistical data
-analysis, simulation and software development.
-My current interest is in data science and I am looking for a position sitting at the crossroad
-between 
-modern machine learning algorithms, traditional statistics and the computational
-challenges of writing code to process effectively massive datasets. 
-I firmly believe in the future of this exiting and highly cross-disciplinary field and at the same time I think it is
-close to my academic background  and fits my skills. 
-My ideal job would involve working in a stimulating, innovative,
-team where I can give
-valuable insights that help the 
-company to grow  and at the same time where I have the opportunity  to
-improve myself and my knowledge.
-
-
-\section{Contact information}
-
-\begin{mycvline}
-     Home address: & via Monte Grappa 44, 33100, Udine, Friuli, Italy  \\
-      E-mail: & \mail{alessandro.candolini@gmail.com} \\
-    Mobile phone: & 
-    \href{tel:00393334387420}{(+39)~333~4387420}\\
-    Skype: & \skype{alessandro.candolini} \\
-    Linkedin: & \website{https://}{www.linkedin.com/in/alessandrocandolini}  \\
-    Bitbucket:  & \website{https://}{bitbucket.org/acando86} \\
-    Stackoverflow:  & 
-   \website{http://}{stackoverflow.com/users/5477611/alessandro-candolini} \\
-    Kaggle profile:  & \website{http://}{www.kaggle.com/alessandrocandolini}
-\end{mycvline}
-
-
-
 \section{Work experiences}
-\cventry{September 2014 -- present}{Spotlime}{Android software engineer}{Milan, Italy}{}{
-   I am responsible of the development and implementation of the 
-   native Android application for 
-   Spotlime, a startup that
+\cventry{September 2014 -- now}{Spotlime}{Mobile software engineer}{Milan, Italy}{}{
+   I am responsible of the implementation design, development, QA and
+   release of 
+   native Android application for Spotlime, a startup that
    provides an app to discover the best events in Milan and Rome. 
-   My duties and responsibilities include:
-   \begin{itemize}
-      \item develop from scratch the production-level Android native application
-	 for Spotlime;
-      \item provide level of effort to support new functionalities and
-	 implement them, 
-      choosing the best implementation strategy, reviewing suitable libreries,
-      and evaluating the best way to
-	 achieve the expected behavior;
-      \item 
-   work alongside marketing team to deliver a product closer
-   to real user
-   needs, promoting solutions that helps improving user experience in response
-   to end user feedback and analytics data;
-      \item 
-   work alongside server-side and iOS developers to coordinate the upcoming
-   releases in accordance with CTO directives.
-   \end{itemize}
    %Functionality includes: Fragments to deliver a fluent user experience,
    %database, geolocation service and maps, FB login, paypal payment, analytics.
-   Technologies used:
-   Android SDK, 
-   Android Studio IDE, Eclipse IDE, Facebook SDK, Google Play Services SDK,
-   AppsFlyer, Support Library, ORMLite, SQLite, gson,  eventbus.
-   Experience in: client-server synchronization,  multithreading, 
-   credit card payment, integration with social channels,
+   Experience in: client-server synchronization, sqlite, 
+   activity-service communication, credit card payment, integration
+   with social channels,
    analytics, maps and geolocation. 
-   \\
+   Knowdledge of SDKs: Facebook, Google Play Services, AppsFlyer, android
+   ORMLite, GSon, EventBus.
+   Working alongside marketing team to deliver a product closer
+   to real user
+   needs, promoting solutions that helps improving user experience in response
+   to end user feedback and analytics data. 
+   Working alongside server-side and iOS developers to coordinate the upcoming
+   releases.
    Company website:
    \url{http://www.spotlimeapp.com/it/home/}.
    The app is freely downloadable from Google play store: 
@@ -233,29 +101,28 @@ improve myself and my knowledge.
    Analyst} 
    {Udine, Italy}{}{After few months working as a quality assurance analyst, I
       have soon become
-   quality assurance team leader at Usablenet, a leading multichannel technology
+   quality assurance team leader at Usablenet, a multichannel technology
    company. 
-   \\
-   My duties and responsibilities  include:
+   My roles include:
    \begin{itemize}
 \item 
   working in synergy with  web
    developers, project manager, solution engineer team and client to
    consistently deliver high-quality
-   products that fulfills customer expectations;
+   products that fulfills customer expectations 
 \item monitor and track project status during all steps, to meet deadlines
    and ensure all scope changes,
  variances and contingences that may arise during the 
  projects lifecycle were visible to all people involved
- \item  be a go-to person in the team
+ \item  be a go-to person in the team.
  \item 
    Ability to prioritize and track multiple projects in parallel,
     manage  allocation of resources within the team, supervise and support my team
     activities
 \item test plan and test cases creation using TestLodge
 \item promote new strategies to speed up effective communication among all
-   teams involved in the project, suggesting 
-   improvements to current workflows and defining new internal procedures
+   teams involved in the project,
+   improving workflows and defining new internal procedures
 \item debugging and monitoring of customized web analytics solutions and 
 technical requirements (for example requirements involving
    akamai technologies)
@@ -273,7 +140,7 @@ technical requirements (for example requirements involving
    Personally responsible as QA analyst of:
    Camelot Group (UK National Lottery, including the
    launch of the mobile website for the new lotto raffle on October 2013), Dell Inc. (22 countries
-   including US, UK, China etc), FedEx,
+   around the world including US, UK, China etc), FedEx,
    MaryKay, Selfridges, Surfstitch and many others.
    Proven ability to work under pressure responsibly and fulfilling high
    expectations.
@@ -321,7 +188,7 @@ Company website: \url{http://usablenet.com/}}
    system like Ising model}
 %\end{shaded}
 
-\cventry{May~2009}
+\cventry{September~2009}
 {Bachelor's degree in Physics}
 {University of Trieste}
 {Trieste (Italy)}
@@ -330,13 +197,12 @@ Company website: \url{http://usablenet.com/}}
       ellissometro}.
    Advisor: Prof. E.~Milotti.
    Description:
-numerical investigation of the influence of laser beam-pointing fluctuations 
+Numerical investigation of the influence of laser beam-pointing fluctuations 
 on the
    thermomechanical stress-induced birefringence in the optical
    ellipsometer of PVLAS experiment. The thesis required 1~year of advanced C++ programming
    including the development of an object-oriented library for finite-element
-   solution of partial differential equations 
-   in rectangular domains and numerical integration of Ito stochastic differential
+   analysis in rectangular domains and numerical integration of Ito stochastic differential
    equations.
 Thesis available (in Italian) at 
 \url{http://www.infn.it/thesis/PDF/getfile.php?filename=3304-Candolini-triennale.pdf}
@@ -349,9 +215,7 @@ Thesis available (in Italian) at
 {Udine (Italy)}
 {100/100}
 {High school's thesis in Physics: \emph{Approccio spazio-temporale globale alla
-      teoria quantistica e formulazione di Feynman della QED} (translation:
-   overall space-time approach to quantum theory and Feynman's formulation of
-   QED). Advisor: Prof.
+      teoria quantistica e formulazione di Feynman della QED}. Advisor: Prof.
    F.~de~Stefano}
  
 
@@ -379,36 +243,26 @@ Thesis available (in Italian) at
 {ITCP}
 {Trieste (Italy)}
 {}
-{Attended the 
-  % School on Supersymmetry and Unification of
-  % Fundamental Interactions 
-  school
-   as partecipant. Website of the school:
+{Attended the School on Supersymmetry and Unification of
+   Fundamental Interactions as partecipant. Website of the school:
    \url{http://presusy2013.ictp.it/}}
 \cventry{13 May 2013 - 17 May 2013}
 {Workshop on Ultracold Atoms \& Gauge
    Theories}
 {ICTP}
 {Trieste (Italy)}{}
-{Attended 
-   %Workshop Ultracold Atoms \& Gauge Theories 
-   the workshop as
-   partecipant.
-   %at the International Center for Theoretical Physics (ICTP).
-   Webpage of the workshop:
+{Attended Workshop Ultracold Atoms \& Gauge Theories as
+   partecipant at the International Center for Theoretical Physics (ICTP).
+   Webpage of the course:
    \url{http://cdsagenda5.ictp.trieste.it/full_display.php?ida=a12184}}
 \cventry{20 August 2012 -- 24 August 2012}
 {Workshop on Majorana Fermions, Non-Abelian Statistics and Topological Quantum Information Processing}%
 {ICTP}
 {Trieste (Italy)}
 {}
-{Attended 
-  % Workshop on Majorana fermions, Non-abelian Statistics and Topological
-   %Quantum Information Processes 
-   the workshop 
-   as
-   partecipant. 
-   %at the International Center for Theoretical Physics (ICTP).
+{Attended Workshop on Majorana fermions, Non-abelian Statistics and Topological
+   Quantum Information Processes as
+   partecipant at the International Center for Theoretical Physics (ICTP).
    Webpage of the workshop:
    \url{http://cdsagenda5.ictp.trieste.it/full_display.php?email=0&ida=a11183}}
 %\cventry{August 2012}
@@ -482,28 +336,27 @@ W. Boschin, D. Ganzini, \emph{A. Candolini}, G. Candolini,
 
 \section{Computer science skills} 
 \cvitem{OS}{Linux, MacOS, Windows}
-\cvitem{Programming Languages}{C++, Android, Python, Scala, 
-   Java, Bash shell,
+\cvitem{Programming Languages}{Knowledge of C++,  Android, Python, C,  FORTRAN~90.
+   Experiences with D, Java, Shell BASH,
    HTML}
 \cvitem{Data-interchange format}{JSON, XML}
 \cvitem{Database}{SQL, JQL}
-\cvitem{IDE and editors}{VI (I'm a proud VI fan), Sublime Text Editor, Eclipse,
-   Android Studio, Scala IDE}
+\cvitem{IDE and editors}{VI (I'm a proud VI fan), Sublime Text Editor, Eclipse, Android Studio}
 \cvitem{Typesetting}{\LaTeXe} 
-\cvitem{Tools for software development}{Atlassian Inc. JIRA,
+\cvitem{Tools for software development and testing}{Atlassian Inc. JIRA, Asana,
    Atlassian Confluence, Atlassian 
    TestLodge, CVS, command-line git, GitHub, BitBucket,
    SourceTree, Asana}
 \cvitem{Programming environments}{Mathematica,
    Octave/MATLAB}
 \cvitem{Scienfic libraries and tools}{Cern ROOT framework, gnuplot, Asymptote Vector Graphics Language, METAPOST,
-   GNU Scientific Library, HDF5}
+   GNU Scientific Library, fftw3, HDF5}
 
 \section{Scientific Interests}
 \cvlistitem{Quantum and Statistical Field Theory}
-\cvlistitem{Statistical data analysis}
-\cvlistitem{High-performance scientific computing}
-\cvlistitem{Functional programming}
+\cvlistitem{Statistical data analysis and big data}
+\cvlistitem{Object-oriented high-performance scientific computing}
+\cvlistitem{D programming language}
 
 \section{Hobbies}
 \cvlistitem{Molecular cocktails, modern mixology, bartendering and gin}
