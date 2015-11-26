@@ -308,9 +308,10 @@
 %                Commands for utilities
 %-------------------------------------------------------------------------------
 % Use to align an element of tabular table
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{T}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 % Use to draw horizontal line with specific tickness
 \def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
@@ -407,10 +408,10 @@
           \faSkype\ \@skype
         }
     } \\
+  \end{center}
     \ifthenelse{\isundefined{\@quote}}
       {}
-      {\vspace{6.0mm}\headerquotestyle{\@quote\\}\vspace{5.0mm}}
-  \end{center}
+      {\vspace{6.0mm}\headerquotestyle{\@quote\\}\vspace{-2mm}}
 }
 
 % Define a footer for CV
@@ -419,7 +420,8 @@
   \fancyfoot{}
   \fancyfoot[L]{}
   \fancyfoot[C]{
-    \footerstyle{\@firstname \@lastname~~~·~~~Curriculum Vitae}
+    \footerstyle{\@firstname \@lastname~~~·~~~Curriculum Vitae~~~·~~~Last
+       update \today}
   }
   \fancyfoot[R]{
     \footerstyle{\thepage}
@@ -488,11 +490,12 @@
 }
 
 % Define an environment for cvhonor
+\def\myimagetop#1{\vtop{\null\hbox{#1}}}
 \newenvironment{cvhonors}{
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{13.0cm} R{2.5cm}}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} T{1.8cm} L{12.7cm} R{2.5cm}}
 }{
     \end{tabular*}
   \end{center}
@@ -532,4 +535,13 @@
   \end{itemize}
   \end{justify}
   \vspace{-2mm}
+}
+
+% CUstom itemize
+\newenvironment{cvitemize}{
+  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+    \setlength{\parskip}{0pt}
+    \renewcommand{\labelitemi}{\bullet}
+}{
+  \end{itemize}
 }
