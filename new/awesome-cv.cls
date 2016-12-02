@@ -375,7 +375,7 @@
               \setbool{istart}{false} 
             }
             {\@headersocialsep}
-          \href{http://bitbucket.com/\@github}{\faGithubSquare\ \@github}
+          \href{http://github.com/\@github}{\faGithubSquare\ \@github}
         }
       \ifthenelse{\isundefined{\@linkedin}}
         {}
