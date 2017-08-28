@@ -22,19 +22,21 @@
 {London, UK}
 {February 2016 -- present}
 {%
-	Leading the android development of the Grocery 
+\textbf{Overview:}
+	I'm leading the android development of the Grocery 
    native app for shopping online. 
-	150k+ users UK-wise, 4 stars rating on the playstore even though we rely on a quite unreliable data source (plain html scraping)
+	The app has 150k+ users UK-wise, 4 stars rating on the playstore even though we rely on a quite unreliable data source (plain html scraping)
     \newline
 \textbf{Duties and responsibilities:}
 \begin{itemize}
 \item 
-	Develop, maintain and deploy 
-		new features at consistent high velocity, without compromising code quality and with proven ability to arrange any urgent task and contingency 
-	\item take ownership and responsibility on critical choices
-	\item Functionalities I have worked on: security enhancements, 3d-secure payments in app, push notifications, and more
-	\item refactor of the original code to increase modularity, testability and stability, promoting the adoption of clean architecture, MVP, Rx, Dagger, retrofit
-	\item  communicate across team to setup processes, remove bottlenecks and increase our ability to deliver business value at speed 
+	Develop, maintain and deploy on the playstore 
+		non-trivial new features at consistent high velocity, without compromise code quality and with proven ability to arrange any urgent task and contingency 
+	\item  taking ownership and responsibility on critical choices, understanding tradeoff that might arise between technical, business and user requirements 
+	\item Functionality I have worked on include: security enhancements, 3d-secure payments in app, push notifications, and many more
+	\item refactor of the original code to increase modularity, testability and speed of delivery, making use of Rx, Dagger, retrofit
+	\item help QA writing multi-platform 
+   E2E acceptance appium Java tests, in my team and other projects 
     \item 
 		Mentorship and training
 \item 
@@ -43,14 +45,12 @@ I'm used to prepare slides to explain benefits and efforts of some implementatio
     \item 
     I have been praised by the company for my hard work
 \end{itemize}
-    \textbf{Technology stack:} RxJava2, Dagger2, Retrofit2 (I have implemented custom converter and calladapter factories to hide the scraping part),
+    \textbf{Preferred technology stack:} RxJava2, Dagger2, Retrofit2 (I have implemented custom converter and calladapter factories to hide the scraping part),
     Realm,
-   Fresco, firebase, appsflyer. Tests: junit4, mockito, espresso, appium, wiremock.
-	CI/CD: I setup the delivery pipeline on 
-	\href{https://nevercode.io}{\texttt{nevercode.io}}
-	configuring unit and espresso tests on aws farm, jacoco, lint
+   Fresco, firebase, appsflyer. For tests: junit4, mockito, espresso, appium, wiremock.
+CI/CD: I setup the delivery pipeline on greenhouse CI, configuring lint, unit and espresso tests on aws farm, sonarqube and jacoco.
    \newline The Android app is freely downloadable from Google play store:
-	\url{https://play.google.com/store/apps/details?id=com.sainsburys.gol&hl=en}
+   \url{https://play.google.com/store/apps/details?id=com.sainsburys.gol&hl=en}
 }
 \cventry
 {Android software engineer}

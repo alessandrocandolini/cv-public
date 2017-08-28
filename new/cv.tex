@@ -8,7 +8,11 @@
 %     Configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Themes: Awesome-CV
+%\documentclass[11pt, a4paper]{my-awesome-cv}
 \documentclass[11pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+%\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
 %%% Override a directory location for fonts(default: 'fonts/')
 \fontdir[fonts/]
@@ -38,82 +42,59 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Needed to divide into several files
 \usepackage{import}
+\usepackage{multicol}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+%\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Personal Data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Essentials
-\name{Alessandro }{Candolini}
+\photo{profile}
+\name{Alessandro}{Candolini}
 %\address{via Monte Grappa 44, 33100, Udine, Italy}
 \address{London, UK}
-%\mobile{(+39) 333-43-87-420}
 \mobile{+44 7402 554023}
-%\mobile{00447402554023}
 %%% Social
 \email{alessandro.candolini@gmail.com}
 \skype{alessandro.candolini}
 %\homepage{www.posquit0.com}
-\github{acando86} 
+\github{alessandrocandolini} 
 \linkedin{alessandrocandolini}  
+% \gitlab{gitlab-id}
+\stackoverflow{5477611}{alessandro-candolini}
+% \twitter{@twit}
+% \reddit{reddit-id}
+%\extrainfo{\url{https://medium.com/@acando86}}
 %%% Optionals
-\position{Physicist 
-{\enskip\cdotp\enskip} Software Developer
-}
+\position{Physicist~~~·~~~Software Engineer}
 %\quote{``Make the change that you want to see in the world."}
 
-%I am looking for positions sitting at the crossroad between modern 
-%algorithms, new technology and the computational challenges of
-%writing code which is beautiful, efficient and reliable.  
-\quote{
-I am an Italian theoretical physicist with heavy mathematical and statistical 
-background, problem-solving attitude, and genuine passion for software engineering and 
-modern technology. 
-%My current interests range from functional
-%programming to data science. 
-Although 
-I'm flexible enough to fit the problem at hand and confidently 
-deliver 
-fast solutions to  
-highest priority tasks if 
-required, 
-I am a precise person and whenever possible I prefer to do things the way they
-should be done.
-Currently I'm an Android developer, 
-however I enjoy  working in a dynamic
-environment where I have chances not only to improve my knowledge of the Android
- ecosystem 
-%and the software development, 
-but 
- where I can also keep an eye on (and borrow ideas and technology from) emerging trends and technologies in related
-fields.
-%(e.g., server-side or js). 
- I firmly
-believe in the future of highly cross-disciplinary fields.
-%I am looking for a position sitting at the crossroad between modern
-%algorithms, new technologies 
-%and the computational challenges of writing code which is clean, efficient
-%and reliable.
-My ideal job would involve working in a stimulating, innovative team where I
-can give valuable insights that help the company to grow  and at the same time
-where I have the opportunity to improve myself and my skills.
-}
+\makecvfooter
+  {\today}
+  {Alessandro Candolini}
+  {\thepage}
 
-
-
+  \def\present{PRESENT}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Content
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Make a footer for CV using personal data
-\makecvfooter
+%\makecvfooter
 
 \begin{document}
 %%% Make a header for CV using personal data
-\makecvheader
+\makecvheader[R]
 
 %%% Import contents
-\import{\sectiondir}{my_skills.tex}
-\import{\sectiondir}{jobs.tex}
+\import{\sectiondir}{about_me.tex}
+\import{\sectiondir}{my_skills_bullet.tex}
+\import{\sectiondir}{jobs_bullet.tex}
 \import{\sectiondir}{my_education.tex}
 \import{\sectiondir}{my_extracurricular.tex}
 \import{\sectiondir}{scholarships.tex}
