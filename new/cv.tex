@@ -9,14 +9,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Themes: Awesome-CV
 %\documentclass[11pt, a4paper]{my-awesome-cv}
-\documentclass[11pt, a4paper]{awesome-cv}
+\documentclass[10pt, a4paper]{awesome-cv2}
 
 % Configure page margins with geometry
 %\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
 %%% Override a directory location for fonts(default: 'fonts/')
-\fontdir[fonts/]
-
 %%% Configure a directory location for sections
 \newcommand*{\sectiondir}{cv/}
 
@@ -86,7 +84,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Make a footer for CV using personal data
 %\makecvfooter
-
+\let\headerfont\rmfamily
+\let\headerfontlight\rmfamily
+\let\footerfont\rmfamily
+\let\bodyfont\rmfamily
+\let\bodyfontlight\rmfamily
 \begin{document}
 %%% Make a header for CV using personal data
 \makecvheader[R]
