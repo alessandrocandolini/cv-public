@@ -1,568 +1,111 @@
-
-\documentclass[10pt,a4paper]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
-
-
-% moderncv themes
-\moderncvstyle{casual}                        
-%\moderncvstyle{classic}                        
-%\moderncvstyle{oldstyle}                        
-%\moderncvstyle{banking}    
-% style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{blue}                          
-% color 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
-
-%\renewcommand{\familydefault}{\sfdefault}    % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-
-%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
-
-% character encoding
-%\usepackage[utf8]{inputenc}                  % if you are not using xelatex ou lualatex, replace by the encoding you are using
-
-% adjust the page margins
-\usepackage[scale=0.75]{geometry}
-\setlength{\hintscolumnwidth}{3cm}           % if you want to change the width of the column with the dates
-%\setlength{\makecvtitlenamewidth}{10cm}      % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
-
-\usepackage[english]{babel}
-
-\usepackage{framed}
-\definecolor{shadecolor}{gray}{.80}%
-
-%\usepackage{fontspec}
-\usepackage{microtype}
-%\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}
-
-
-%\setmainfont[SmallCapsFeatures={LetterSpace=6}, Numbers={Proportional,OldStyle}]{Minion Pro}
-
-%%
-%\setmainfont[SizeFeatures = {
-%  {Size =     -8.41, OpticalSize = 8},
-%  {Size = 8.41-13.1, OpticalSize = 11},
-%  {Size = 13.1-20.0, OpticalSize = 19},
-%  {Size = 20.0-,     OpticalSize = 72}}
-%]{Minion Pro}
-
-%\setmainfont[
-%SizeFeatures = {
-%  {Size =     -8.41, OpticalSize = 8},
-%  {Size = 8.41-13.1, OpticalSize = 11},
-%  {Size = 13.1-20.0, OpticalSize = 19},
-%  {Size = 20.0-,     OpticalSize = 72}},
-%%Ligatures          = {Required, Common, Contextual, TeX},
-%%Numbers            = {OldStyle, Proportional},
-%%RawFeature         = {expansion  = default},
-%%UprightFeatures    = {RawFeature = {protrusion = mnr}},
-%%BoldFeatures       = {RawFeature = {protrusion = mnrb}},
-%%ItalicFeatures     = {RawFeature = {protrusion = mni}},
-%%BoldItalicFeatures = {RawFeature = {protrusion = mnib}}
-%]{Minion Pro}
-
-
-%\setsansfont[LetterSpace=3, Numbers={Proportional,OldStyle}]{Myriad Pro}
-
-\usepackage{array}
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-
-\newenvironment{mycvline}{
-      \begin{tabular*}{\textwidth}{ R{\hintscolumnwidth}
-	    @{\extracolsep{\columnsep}}l}
-   }{
-\end{tabular*}
-}
-
-%\SetProtrusion
-%   [ name     = min-eu2 ]
-%   { encoding = {EU2},
-%     family   = MinionPro  }
-%   {
-%    {,} = {  ,500},
-%     -  = {  ,500}
-%   }
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Copyright 2015 Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
 %
 
-%\usepackage[fullfamily,opticals,mathlf,onlytext]{MinionPro}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Themes: Awesome-CV
+%\documentclass[11pt, a4paper]{my-awesome-cv}
+\documentclass[10pt, a4paper]{awesome-cv2}
+
+% Configure page margins with geometry
+%\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+%%% Override a directory location for fonts(default: 'fonts/')
+%%% Configure a directory location for sections
+\newcommand*{\sectiondir}{cv/}
+
+%%% Override color
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+%% Color for highlight
+% Define your custom color if you don't like awesome colors
+\colorlet{awesome}{awesome-red}
+%\definecolor{awesome}{HTML}{CA63A8}
+%% Colors for text
+%\definecolor{darktext}{HTML}{414141}
+%\definecolor{text}{HTML}{414141}
+%\definecolor{graytext}{HTML}{414141}
+%\definecolor{lighttext}{HTML}{414141}
+
+%%% Override a separator for social informations in header(default: ' | ')
+%\headersocialsep[\quad\textbar\quad]
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     3rd party packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Needed to divide into several files
+\usepackage{import}
+\usepackage{multicol}
 
-\newcommand{\mail}[1]{\href{mailto:#1}{\texttt{#1}}}
-\newcommand{\website}[2]{\href{#1#2}{\texttt{#2}}}
-\newcommand{\skype}[1]{\href{skype:#1?userinfo}{#1}}%
-   % http://stackoverflow.com/questions/16177332/create-application-link-to-skype-profile
-% personal data
-\firstname{Alessandro}
-\familyname{Candolini}
-\title{%
-%      \fontspec[Variant = 2]{Zapfino} Curriculum
- %     {Vit\fontspec[Variant = 3]{Zapfino}\ae}
- Curriculum Vit\ae
-}
-\address{via Monte Grappa~44}{33100 Udine (Italy)}    
-\mobile{(+39)~333~4387420}
-\phone{Skype: alessandro.candolini}
-%\fax{+3~(456)~789~012}                        
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+%\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Personal Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Essentials
+\photo{profile}
+\name{Alessandro}{Candolini}
+%\address{via Monte Grappa 44, 33100, Udine, Italy}
+\address{London, UK}
+\mobile{+44 7402 554023}
+%%% Social
 \email{alessandro.candolini@gmail.com}
-%\homepage{www.johndoe.com}                    
-%\extrainfo{additional information}            
-%\extrainfo{%
-%   \begin{tabular}{c}
-%   Linkedin:  \website{https://}{www.linkedin.com/in/alessandrocandolini} \\
-%   Bitbucket:  \website{https://}{bitbucket.org/acando86}\\
-%   Stackoverflow: 
-%   \website{http://}{stackoverflow.com/users/5477611/alessandro-candolini} \\
-%   Kaggle profile:  \website{http://}{www.kaggle.com/alessandrocandolini}
-%\end{tabular}
-%}
-%\photo[64pt][0pt]{profile2}
-\photo[64pt][0pt]{foto2}
-% '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file; optional, remove the line if not wanted
-%\quote{Some quote (optional)}                 % optional, remove the line if not wanted
+\skype{alessandro.candolini}
+%\homepage{www.posquit0.com}
+\github{alessandrocandolini} 
+\linkedin{alessandrocandolini}  
+% \gitlab{gitlab-id}
+\stackoverflow{5477611}{alessandro-candolini}
+% \twitter{@twit}
+% \reddit{reddit-id}
+%\extrainfo{\url{https://medium.com/@acando86}}
+%%% Optionals
+%\position{Physicist~~~\cdot~~~Software Engineer~~~\cdot~~~~Mad Hatter}
+\position{Physicist~~~\cdot~~~Software Engineer}
+%\position{Physicist~~~\cdot~~~Software Engineer}
+%\quote{``Make the change that you want to see in the world."}
 
+\makecvfooter
+  {\today}
+  {Alessandro Candolini}
+  {\thepage}
 
-
-
-
-% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
-%\makeatletter
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%\makeatother
-
-% bibliography with mutiple entries
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
-%----------------------------------------------------------------------------------
-%            content
-%----------------------------------------------------------------------------------
+  \def\present{PRESENT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Make a footer for CV using personal data
+%\makecvfooter
+\let\headerfont\rmfamily
+\let\headerfontlight\rmfamily
+\let\footerfont\rmfamily
+\let\bodyfont\rmfamily
+\let\bodyfontlight\rmfamily
 \begin{document}
-%\begin{CJK*}{UTF8}{gbsn}                     % to typeset your resume in Chinese using CJK
-%-----       resume       ---------------------------------------------------------
-\makecvtitle
+%%% Make a header for CV using personal data
+\makecvheader[R]
 
-   
-%\section{Bachelor thesis}
-%\cvitem{title}{\emph{Simulazione numerica dello stress termomeccanico in un
-%      ellissometro}}
-%\cvitem{supervisors}{Prof. E.~Milotti}
-%\cvitem{description}{
-
-%\begin{tabular*}{7in}{l@{\extracolsep{\fill}}l}
-
-I am an Italian theoretical particle physicist with heavy mathematical
-background, problem-solving attitude, and passion for statistical data
-analysis, simulation and software development.
-My current interest is in data science and I am looking for a position sitting at the crossroad
-between 
-modern machine learning algorithms, traditional statistics and the computational
-challenges of writing code to process effectively massive datasets. 
-I firmly believe in the future of this exiting and highly cross-disciplinary field and at the same time I think it is
-close to my academic background  and fits my skills. 
-My ideal job would involve working in a stimulating, innovative,
-team where I can give
-valuable insights that help the 
-company to grow  and at the same time where I have the opportunity  to
-improve myself and my knowledge.
-
-
-\section{Contact information}
-
-\begin{mycvline}
-     Home address: & via Monte Grappa 44, 33100, Udine, Friuli, Italy  \\
-      E-mail: & \mail{alessandro.candolini@gmail.com} \\
-    Mobile phone: & 
-    \href{tel:00393334387420}{(+39)~333~4387420}\\
-    Skype: & \skype{alessandro.candolini} \\
-    Linkedin: & \website{https://}{www.linkedin.com/in/alessandrocandolini}  \\
-    Bitbucket:  & \website{https://}{bitbucket.org/acando86} \\
-    Stackoverflow:  & 
-   \website{http://}{stackoverflow.com/users/5477611/alessandro-candolini} \\
-    Kaggle profile:  & \website{http://}{www.kaggle.com/alessandrocandolini}
-\end{mycvline}
-
-
-
-\section{Work experiences}
-\cventry{September 2014 -- present}{Spotlime}{Android software engineer}{Milan, Italy}{}{
-   I am responsible of the development and implementation of the 
-   native Android application for 
-   Spotlime, a startup that
-   provides an app to discover the best events in Milan and Rome. 
-   My duties and responsibilities include:
-   \begin{itemize}
-      \item develop from scratch the production-level Android native application
-	 for Spotlime;
-      \item provide level of effort to support new functionalities and
-	 integrate them, 
-      choosing the implementation strategy, reviewing suitable libreries,
-      and evaluating the best way to
-	 achieve the expected behavior;
-      \item 
-   work alongside marketing team to deliver a product closer
-   to real user
-   needs, promoting solutions that helps improving user experience in response
-   to end user feedback and analytics data;
-      \item 
-   work alongside server-side and iOS developers to coordinate the upcoming
-   releases in accordance with CTO directives;
-\item help to develop Spotlime official website using mainly JSF and
-   primefaces technology.
-   \end{itemize}
-   %Functionality includes: Fragments to deliver a fluent user experience,
-   %database, geolocation service and maps, FB login, paypal payment, analytics.
-   Technologies include:
-   Android SDK, Google Play Services,
-   Android Studio and Eclipse IDEs, Facebook SDK, 
-   ORMLite and SQLite, gson,  eventbus.
-   Experience in: client-server synchronization,  multithreading, 
-   social channels,
-   analytics, maps and geolocation. 
-   \\
-   Company website:
-   \url{https://www.spotlimeapp.com/web/bin/index.xhtml}
-   The Android app is freely downloadable from Google play store: 
-   \url{https://play.google.com/store/apps/details?id=com.gooutsrl&hl=en}
-}
-%\cventry{July 2015 -- present}{Freelance}{Part-time web developer}{Udine,
-%   Italy}{}{
-%   Working on small projects to build simple websites using mainly Wordpress.
-%   Projects include: grupoeuroamerica.
-%   \url{http://www.grupoeuroamerica.com.mx}
-%}
-\cventry{October 2012 -- August 2014}{Usablenet - leading global mobile and
-   multi-channel technology company.}{Lead Quality Assurance
-   Analyst} 
-   {Udine, Italy}{}{After few months working as a quality assurance analyst, I
-      have soon become
-   quality assurance team leader at Usablenet, a leading multichannel technology
-   company. 
-   \\
-   My duties and responsibilities  include:
-   \begin{itemize}
-\item 
-  working in synergy with  web
-   developers, project manager, solution engineer team and client to
-   consistently deliver high-quality
-   products that fulfills customer expectations;
-\item monitor and track project status during all steps, to meet deadlines
-   and ensure all scope changes,
- variances and contingences that may arise during the 
- projects lifecycle were visible to all people involved
- \item  be a go-to person in the team
- \item 
-   Ability to prioritize and track multiple projects in parallel,
-    manage  allocation of resources within the team, supervise and support my team
-    activities
-\item test plan and test cases creation using TestLodge
-\item promote new strategies to speed up effective communication among all
-   teams involved in the project, suggesting 
-   improvements to current workflows and defining new internal procedures
-\item debugging and monitoring of customized web analytics solutions and 
-technical requirements (for example requirements involving
-   akamai technologies)
-   %(Google
-%   Analytics with e-commerce, AdWords, AdSense, IBM coremetrics,
-%   SiteCatalysts, I2A, etc) and tag managers (GTM,
-%   Tealium) 
-%\item training and integration of people who join the company;
-   %providing a
-%   thoroughly overview of tools, workflows and responsibilities.
-   %about 
-   \item developing small scripts (mainly using Python+JQL) which help to retrieve project
- information from Jira and provide automatic statistical reports about project status
- \end{itemize} 
-   Personally responsible as QA analyst of:
-   Camelot Group (UK National Lottery, including the
-   launch of the mobile website for the new lotto raffle on October 2013), Dell Inc. (22 countries
-   including US, UK, China etc), FedEx,
-   MaryKay, Selfridges, Surfstitch and many others.
-   Proven ability to work under pressure responsibly and fulfilling high
-   expectations.
-I have been involved in 247 QA support, which requires ability to quickly gain
-familiarity with unknow projects, providing insights which help to spot the root
-cause of the issues and testing if it has
-been solved successfully.
-Company website: \url{http://usablenet.com/}}
-%\cventry{July 2015 -- present}{Freelance}{Part-time freelance web developer}{Udine,
-%   Italy}{}{
-%   Working on small projects to build simple websites using mainly Wordpress.
-%   Example of project:
-%   \url{http://www.grupoeuroamerica.com.mx}
-%}
-\cventry{2006 -- 2012}{University of Udine}{Teacher (on call)}{Udine}{}{
-   I have been asked to teach  the \emph{Esercitazioni guidate di Fisica per il Corso
-      di preparazione al Test di ammissione alla Facolt\`a di Medicina e
-      Chirurgia} at the University of Udine (support training lectures
-   organized for students who have to perform the examination test to enter the
-   first year at the faculty of Medicine).}
-\cventry{September~2011 -- August~2012}{R.U.E. Risorse Umane Europa (no-profit
-   association)}{IT technical expert (on call)}{Udine}{}{
-   Handling the IT issues in a small office (5 employees): pc, network and
-   website maintenance}
-\cventry{January 2010 -- December 2010}{Consorzio per la Fisica}{\LaTeXe\ typesetter}{Trieste}{}
-{   I typeset prof. E.~Gozzi lectures notes for his course of Quantum Mechanics.
-   The notes are currently available at 
-   \url{http://www-dft.ts.infn.it/~gozzi/QM2.pdf}}
-\cventry{February~2008 -- May~2008}{I.N.F.N. (Istituto Nazionale di Fisica
-   Nucleare)}{C++ developer as volounteer}{Trieste}
-{}{Development of a object-oriented C++ library for uniform and non-uniform
-   pseudo-random number generations, including some state-of-art algorithms}
-
-\section{Education and training}
-\cventry{September 2009 -- now}%
-{Master student in Theoretical Physics}
-{University of Trieste}
-{Trieste (Italy)}{Not completed yet}
-{Not completed yet due to work. I have successfully done  exams including: advanced statistical mechanics,
-   field theory, advanced mathematical methods and computational physics,
-   including C++
-   implementation and comparison of symplectic algorithms for numerical
-   integration of ordinary differential initial valued problems in classical
-   molecular dynamics and monte carlo simulation of statistical mechanics
-   system like Ising model}
-%\end{shaded}
-
-\cventry{May~2009}
-{Bachelor's degree in Physics}
-{University of Trieste}
-{Trieste (Italy)}
-{110/110}
-{Thesis title: \emph{Simulazione numerica dello stress termomeccanico in un
-      ellissometro}.
-   Advisor: Prof. E.~Milotti.
-   Description:
-numerical investigation of the influence of laser beam-pointing fluctuations 
-on the
-   thermomechanical stress-induced birefringence in the optical
-   ellipsometer of PVLAS experiment. The thesis required 1~year of advanced C++ programming
-   including the development of an object-oriented library for finite-element
-   solution of partial differential equations 
-   in rectangular domains and numerical integration of Ito stochastic differential
-   equations.
-Thesis available (in Italian) at 
-\url{http://www.infn.it/thesis/PDF/getfile.php?filename=3304-Candolini-triennale.pdf}
-}
-    
-
-\cventry{July~2005}
-{Scientific high school diploma} 
-{Liceo Scientifico Statale G. Marinelli}
-{Udine (Italy)}
-{100/100}
-{High school's thesis in Physics: \emph{Approccio spazio-temporale globale alla
-      teoria quantistica e formulazione di Feynman della QED} (translation:
-   overall space-time approach to quantum theory and Feynman's formulation of
-   QED). Advisor: Prof.
-   F.~de~Stefano}
- 
-
-\section{Continuing Education}
-
-
-\cventry{December 17, 2014}
-%{SUSY 2013 --- 21st International Conference on
-%   Supersymmetry and Unification of Fundamental Interactions}
-{Machine Learning}
-{Coursera}
-{}
-{}
-{Statement of Accomplishment of Machine Learning course by Professor Andrew Ng
-   from Standford University.
-   Website of the course:
-   \url{https://www.coursera.org/learn/machine-learning/home/info}}
-
-
-\cventry{20 August 2013 - 23 August 2013}
-%{SUSY 2013 --- 21st International Conference on
-%   Supersymmetry and Unification of Fundamental Interactions}
-{School on Supersymmetry and Unification of Fundamental Interactions (Pre-SUSY
-   2013)}
-{ITCP}
-{Trieste (Italy)}
-{}
-{Attended the 
-  % School on Supersymmetry and Unification of
-  % Fundamental Interactions 
-  school
-   as partecipant. Website of the school:
-   \url{http://presusy2013.ictp.it/}}
-\cventry{13 May 2013 - 17 May 2013}
-{Workshop on Ultracold Atoms \& Gauge
-   Theories}
-{ICTP}
-{Trieste (Italy)}{}
-{Attended 
-   %Workshop Ultracold Atoms \& Gauge Theories 
-   the workshop as
-   partecipant.
-   %at the International Center for Theoretical Physics (ICTP).
-   Webpage of the workshop:
-   \url{http://cdsagenda5.ictp.trieste.it/full_display.php?ida=a12184}}
-\cventry{20 August 2012 -- 24 August 2012}
-{Workshop on Majorana Fermions, Non-Abelian Statistics and Topological Quantum Information Processing}%
-{ICTP}
-{Trieste (Italy)}
-{}
-{Attended 
-  % Workshop on Majorana fermions, Non-abelian Statistics and Topological
-   %Quantum Information Processes 
-   the workshop 
-   as
-   partecipant. 
-   %at the International Center for Theoretical Physics (ICTP).
-   Webpage of the workshop:
-   \url{http://cdsagenda5.ictp.trieste.it/full_display.php?email=0&ida=a11183}}
-%\cventry{August 2012}
-% arguments 3 to 6 can be left empty
-%\cventry{September~2009--now}{}{Institution}{City}{\textit{Grade}}{Description}
-%\begin{shaded}
-
-\cventry{February~2010}%
-{Lectures of Introduction to Bayesian methods}
-{University of Trieste}
-{Trieste (Italy)}{}
-{I attended \emph{as volountear} the Ph.D. course of Introduction to Bayesian methods (Prof.
-   E.~Milotti).
-   Lectures addresses Ph.D. students in Physics at university of Trieste.
-Topics covered include: Bayesian inference, Maximum-Entropy and its applications
-to image restoration, EM algorithm, Markov-Chain Monte Carlo, introduction to
-naive Bayesian learning and 
-Bayesian classifiers (AUTOCLASS). 
-Webpage of the course:
-\url{http://wwwusers.ts.infn.it/~milotti/Didattica/Bayes/Bayes.html}
-}
-
-
-
-
-
-\section{Other experiences}
-\cventry{2000-2007}{A.F.A.M. (Associazione Friulana di Astronomia e
-   Meteorologia}{}{Remanzacco, Udine (Italy)}{}{
-   Data reduction of VHF radio forward scatter meteor
-   observations and detection of Jupiter decametric radio emissions (as a part
-   of NASA's radio JOVE project).
-   Data reduction for meteor activity were published monthly on the official
-   RMOB bolletin and, at least in one occasion, cited in a referred paper by
-   Alastair McBeath: WGN \textbf{31}:264--68 (2003).
-   Observations on Quadrantids were published in a referred paper. 
-   \newline{}
-   Several small projects of statistical data analysis and data visualization in C and C++.
-   Created teaching notes about Io-Jupiter radio emissions for the AFAM website. 
-   Webpage of the AFAM radioastronomy group is (in Italian) 
-   \url{http://www.tng.iac.es/users/boschin/RadioAFAM/}
-}
-
-\section{Scholarships}
-\cventry{2009}{University College for Sciences ``Luciano Fonda''}{}{Trieste
-   (Italy)}{}{
-   I won the scholarship in Physics for academic achievements.
-   The evaluation of the candidates was based on an oral examination and the documents supporting the
-   application (curriculum vit\ae{} et studiourum, certificate indicating the
-   exams sat and the marks obtained and two letters of presentation).}
-\cventry{2005--2008}{University College for Sciences ``Luciano Fonda''}{}{Trieste
-   (Italy)}{}{
-   I won the scholarship in Physics for academic achievements and maintaned it
-   for the three years of undergraduate studies.
-   The evaluation of the candidates was based on writing and oral examination.
-   In order to maintain the right to the scholarship students had to sit all
-   the exams set for each year within the following 31st October and to obtain
-   an \emph{average mark of at least 27/30} for the exams sat in the academic
-   year and \emph{no less than 24/30} in any one exam.}
-
-\section{Pubblications}
-\cvitem{2003}{
-W. Boschin, D. Ganzini, \emph{A. Candolini}, G. Candolini, 
-\textbf{Radio Observations of the 2002 December Ursids from North-Eastern
-   Italy}, WGN, \textbf{31}:1 29--30 (2003)}
-
-\section{Languages}
-\cvitemwithcomment{Primary Language}{Italian}{}
-\cvitemwithcomment{Secondary Language}{English (level B2 advanced)}
-{2006, University of Cambridge First Certificate (F.C.E.)}
-
-\section{Computer science skills} 
-\cvitem{OS}{Linux, MacOS, Windows}
-\cvitem{Programming Languages}{C++, Android, Python, Scala, 
-   Java, Bash shell,
-   HTML}
-\cvitem{Data-interchange format}{JSON, XML}
-\cvitem{Database}{SQL, JQL}
-\cvitem{IDE and editors}{VI (I'm a proud VI fan), Sublime Text Editor, Eclipse,
-   Android Studio, Scala IDE}
-\cvitem{Typesetting}{\LaTeXe} 
-\cvitem{Tools for software development}{Atlassian Inc. JIRA,
-   Atlassian Confluence, Atlassian 
-   TestLodge, CVS, command-line git, GitHub, BitBucket,
-   SourceTree, Asana}
-\cvitem{Programming environments}{Mathematica,
-   Octave/MATLAB}
-\cvitem{Scienfic libraries and tools}{Cern ROOT framework, gnuplot, Asymptote Vector Graphics Language, METAPOST,
-   GNU Scientific Library, HDF5}
-
-\section{Scientific Interests}
-\cvlistitem{Quantum and Statistical Field Theory}
-\cvlistitem{Statistical data analysis}
-\cvlistitem{High-performance scientific computing}
-\cvlistitem{Functional programming}
-
-\section{Hobbies}
-\cvlistitem{Molecular cocktails, modern mixology, bartendering and gin}
-\cvlistitem{Listening to blues and progressive rock (expecially Eric
-   Clapton, Joe Bonamassa, Mark Knopfler, Eric Johnson, Deep Purple)}
-\cvlistitem{Reading books (I'm a proud fan of Dostoevskij)}
-\cvlistitem{Typography (I love R. Bringhurst's \emph{Elements of Typographic
-      Style}, among my favourite fonts are MinionPro opticals, and I enyoj using \LaTeX{} to implement typographic finesse)}
-\cvlistitem{Walking with my Siamese cat Ciambella}
-
-\renewcommand{\listitemsymbol}{-~}            % change the symbol for lists
-
-%\section{Extra 2}
-%\cvlistdoubleitem{Item 1}{Item 4}
-%\cvlistdoubleitem{Item 2}{Item 5\cite{book1}}
-%\cvlistdoubleitem{Item 3}{}
-
-% Publications from a BibTeX file without multibib
-%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
-%\nocite{*}
-%\bibliographystyle{plain}
-%\bibliography{publications}                   % 'publications' is the name of a BibTeX file
-
-% Publications from a BibTeX file using the multibib package
-%\section{Publications}
-%\nocitebook{book1,book2}
-%\bibliographystylebook{plain}
-%\bibliographybook{publications}              % 'publications' is the name of a BibTeX file
-%\nocitemisc{misc1,misc2,misc3}
-%\bibliographystylemisc{plain}
-%\bibliographymisc{publications}              % 'publications' is the name of a BibTeX file
+%%% Import contents
+\import{\sectiondir}{about_me.tex}
+\import{\sectiondir}{my_skills_bullet.tex}
+\import{\sectiondir}{jobs_bullet.tex}
+\import{\sectiondir}{my_education.tex}
+\import{\sectiondir}{my_extracurricular.tex}
+\import{\sectiondir}{scholarships.tex}
+\import{\sectiondir}{pubblications.tex}
+\import{\sectiondir}{hobbies.tex}
+%\import{\sectiondir}{presentation.tex}
+%\import{\sectiondir}{writing.tex}
+%\import{\sectiondir}{committees.tex}
 
 \end{document}
-\clearpage
-%-----       letter       ---------------------------------------------------------
-% recipient data
-\recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
-\date{January 01, 1984}
-\opening{Dear Sir or Madam,}
-\closing{Yours faithfully,}
-\enclosure[Attached]{curriculum vit\ae{}}     % use an optional argument to use a string other than "Enclosure", or redefine \enclname
-\makelettertitle
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
-
-Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
-
-Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
-
-Albert Einstein discovered that $e=mc^2$ in 1905.
-
-\[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
-
-\makeletterclosing
-
-%\clearpage\end{CJK*}                         % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
-\end{document}
-
-
-%% end of file `template.tex'.
