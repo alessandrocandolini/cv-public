@@ -1,46 +1,14 @@
-%!TEX TS-program = xelatex
-%!TEX encoding = UTF-8 Unicode
-% Copyright 2015 Claud D. Park <posquit0.bj@gmail.com>
-% http://www.posquit0.com
-%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Configuration
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Themes: Awesome-CV
-%\documentclass[11pt, a4paper]{my-awesome-cv}
 \documentclass[10pt, a4paper]{awesome-cv2}
 
 % Configure page margins with geometry
 %\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
-%%% Override a directory location for fonts(default: 'fonts/')
-%%% Configure a directory location for sections
 \newcommand*{\sectiondir}{cv/}
 
-%%% Override color
-% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
-%                 awesome-nephritis, awesome-concrete, awesome-darknight
-%% Color for highlight
-% Define your custom color if you don't like awesome colors
 \colorlet{awesome}{awesome-red}
-%\definecolor{awesome}{HTML}{CA63A8}
-%% Colors for text
-%\definecolor{darktext}{HTML}{414141}
-%\definecolor{text}{HTML}{414141}
-%\definecolor{graytext}{HTML}{414141}
-%\definecolor{lighttext}{HTML}{414141}
-
-%%% Override a separator for social informations in header(default: ' | ')
-%\headersocialsep[\quad\textbar\quad]
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     3rd party packages
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Needed to divide into several files
 \usepackage{import}
 \usepackage{multicol}
+\usepackage{accsupp}
 
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
@@ -49,31 +17,16 @@
 %\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Personal Data
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Essentials
 \photo{profile}
 \name{Alessandro}{Candolini}
-%\address{via Monte Grappa 44, 33100, Udine, Italy}
 \address{London, UK}
 \mobile{+44 7402 554023}
-%%% Social
 \email{alessandro.candolini@gmail.com}
 \skype{alessandro.candolini}
-%\homepage{www.posquit0.com}
 \github{alessandrocandolini} 
 \linkedin{alessandrocandolini}  
-% \gitlab{gitlab-id}
 \stackoverflow{5477611}{alessandro-candolini}
-% \twitter{@twit}
-% \reddit{reddit-id}
-%\extrainfo{\url{https://medium.com/@acando86}}
-%%% Optionals
-%\position{Physicist~~~\cdot~~~Software Engineer~~~\cdot~~~~Mad Hatter}
 \position{Physicist~~~\cdot~~~Software Engineer}
-%\position{Physicist~~~\cdot~~~Software Engineer}
-%\quote{``Make the change that you want to see in the world."}
 
 \makecvfooter
   {\today}
@@ -95,7 +48,6 @@
 %%% Make a header for CV using personal data
 \makecvheader[R]
 
-%%% Import contents
 \import{\sectiondir}{about_me.tex}
 \import{\sectiondir}{my_skills_bullet.tex}
 \import{\sectiondir}{jobs_bullet.tex}
@@ -104,8 +56,5 @@
 \import{\sectiondir}{scholarships.tex}
 \import{\sectiondir}{pubblications.tex}
 \import{\sectiondir}{hobbies.tex}
-%\import{\sectiondir}{presentation.tex}
-%\import{\sectiondir}{writing.tex}
-%\import{\sectiondir}{committees.tex}
 
 \end{document}
