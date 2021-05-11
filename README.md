@@ -7,6 +7,7 @@ It requires `xelatex` or `lualatex` because the underlying document class uses `
 * dockerise the build and use github actions to create the artifact and make the pdf downloadable from the release tab
 * remove dependency from `fontspec` and compile it with `pdflatex` 
 * remove dependency from awesome-cv
+* fix legature problems when copy-pasting (probably will solve automatically when removing xelatex and custom fonts)
 
 ## Acknowledgement
 
