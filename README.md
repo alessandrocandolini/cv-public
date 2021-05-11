@@ -1,6 +1,6 @@
 # Personal CV in LaTeX
 
-It requires `xelatex` or `lualatex` because the underlying document class uses `fontspec` package. Fonts are in the `font` folder in the repo, to improve portability.
+Currently, it requires `xelatex` or `lualatex` because the underlying document class uses `fontspec` package. Fonts are in the `font` folder in the repo, to improve portability.
 
 ## Todos
 
