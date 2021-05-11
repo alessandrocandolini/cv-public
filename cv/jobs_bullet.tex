@@ -1,42 +1,39 @@
-%  \cventry
-%    {Software Engineer \& Security Researcher (Compulsory Military Service)}
-%    {R.O.K Cyber Command, MND}
-%    {Seoul, S.Korea}
-%    {Aug. 2014 - Exp. Apr. 2016}
-%    {
-%      \begin{cvitems}
-%        \item {Implemented a military cooperation system which is web based real time messenger in Scala on Lift.}
-%        \item {Improved functionality on military command and control system for incident response with Java Servlet.}
-%        \item {Lead engineer on agent-less backtracking system that can discover client device's fingerprint(including public and private IP) independently of the Proxy, VPN and NAT.}
-%      \end{cvitems}
-%    }
-
-
-
-
 \cvsection{Work Experience}
 \begin{cventries}
 \cventry
-	{Android \& Scala Software Engineer}
+  {Technical Lead - Senior Software Engineer (Scala)}
 {Depop}
 	{London, UK}
 	{November 2017 - \present{}}
 {%
 \begin{cvitems} 
-\item 
-	Develop new features for the Depop marketplace app
-	1,000,000+ installations worldwide, 4.2 stars rating. 
-	 Key functionalities I have implemented: Instagram-like 60fps gallery image picker, mark item as shipped, share profile shop, and more. 
-\item Scala development of a costellation of mobile-specific api microservices using play; codebase is heavily shaped on FP patterns (applicative, monads), as approach I follow contract-driven development (tools: apiary, blueprint and dredd). Infrastructure runs on AWS, for monitoring librato is used. 
-\item Work hard to modernise the android codebase and build re-usable library components for the teams 
-\item Driven the adoption of Kotlin as main language to develop every new feature, in particular emphasizing functional capabilities of the language and spreading knowledge about coroutines-based concurrency patterns 
-\item Advocating adoption of feature modules to restructure the monolithic structure of the android codebase, in order to make tdd effective, increase decoupling, ultimately allowing the company to scale the structure of the teams 
-\item Pairing, coaching and mentoring. My approach encourages a critical attitude to reason about the problem, understand the (technical and non-technical) constraints,  question about the possible strategies and their tradeoffs, and evaluate pros and cons of different solutions
- \item Responsible of defining a testing strategy to drive adoption of BDD and TDD across the whole mobile (android and ios) teams. Tools: apiary, dredd, wiremock, junit, mockito, espresso
-\item Promoting communication between team members and between teams at all levels
-\item We follow scrum, 2-weeks sprints with release at the end of each sprint (for mobile teams) and kanban and CI/CD (for backend)
-\item App is freely available from 
-	\url{https://play.google.com/store/apps/details?id=com.depop&hl=en_GB} 
+\item architected and implemented from scratch several Scala/Play/Akka backend microservices running on k8s, taking design decisions end to end (including responsibility boundaries, databases, caching strategies, sync and async communication with other systems, mobile and web access patterns, etc). Some of these services are core to the Depop experience (eg, discounts, product attributes, seller incentives) and can reach \~ 2k+ req/sec at peak time. 
+  Contributed to many other user-facing services (eg, checkout, notifications, search, chat, video, etc). 
+\item Confidently deployed to production multiple times/day critical systems at every time of the day (including peak times) with no incident or failure 
+  \item Introduced and fostered adoption of a constellation of backend-for-frontend Scala/Play services (called mobile apis), implemented several of them, and helped the web team setting up similar ones in node/typescript 
+\item Despite my role being primarily focus on supporting PM and ADM in their roles, I've always tried to stay hands-on and lead by example, encouraging best practices within my team: testing, incrementality, accountability, maintenance, quality, pragmatism, monitoring, cooperation, communication, team work
+\item Quarterly planning, scoping, estimations, cost/benefit analysis, risk assessment, define reliability debt, solutionalise and break down the upcoming work, providing the business with different tradeoffs balancing short and long term engineering and non-engineering needs. 
+\item Involved as tech consultant in strategic discussions within the organisation about adoption of 3rd party solutions % for various tasks (eg, video streaming, visual ai, etc)
+  \item Run interviews for senior/lead/head/principal positions across the organisation 
+  \item Promoted and maintained a number of libraries and tools to speed up the development experience % (eg, giter8 templates, CLI,  etc)
+  \item Work in tandem with the platform team helping in various ways, from helm charts to telemetry and tracing %(I'm the one who has promoted the adoption of kamon for tracing across the organisation)
+    \item On call for backend rota outside working hours in case of incidents 
+      % \item Kick off Kotlin in the backend
+ \item Pairing and mentoring of backend, mobile and web engineers. My approach encourages a critical attitude to reason about the problem, understand the (technical and non-technical) implications, and evaluate pros and cons of different solutions
+% \item 
+% 	Develop new features for the Depop marketplace app
+% 	1,000,000+ installations worldwide, 4.2 stars rating. 
+% 	 Key functionalities I have implemented: Instagram-like 60fps gallery image picker, mark item as shipped, share profile shop, and more. 
+% \item Scala development of a costellation of mobile-specific api microservices using play; codebase is heavily shaped on FP patterns (applicative, monads), as approach I follow contract-driven development (tools: apiary, blueprint and dredd). Infrastructure runs on AWS, for monitoring librato is used. 
+% \item Work hard to modernise the android codebase and build re-usable library components for the teams 
+% \item Driven the adoption of Kotlin as main language to develop every new feature, in particular emphasizing functional capabilities of the language and spreading knowledge about coroutines-based concurrency patterns 
+% \item Advocating adoption of feature modules to restructure the monolithic structure of the android codebase, in order to make tdd effective, increase decoupling, ultimately allowing the company to scale the structure of the teams 
+% \item Pairing, coaching and mentoring. My approach encourages a critical attitude to reason about the problem, understand the (technical and non-technical) constraints,  question about the possible strategies and their tradeoffs, and evaluate pros and cons of different solutions
+%  \item Responsible of defining a testing strategy to drive adoption of BDD and TDD across the whole mobile (android and ios) teams. Tools: apiary, dredd, wiremock, junit, mockito, espresso
+% \item Promoting communication between team members and between teams at all levels
+% \item We follow scrum, 2-weeks sprints with release at the end of each sprint (for mobile teams) and kanban and CI/CD (for backend)
+% \item App is freely available from 
+% 	\url{https://play.google.com/store/apps/details?id=com.depop&hl=en_GB} 
 	\end{cvitems}
 }
 
@@ -49,8 +46,8 @@
 \begin{cvitems} 
 \item 
 	Leading the android development of the Grocery 
-   native app for shopping online. 
-	150k+ users UK-wise, 4 stars rating on the playstore even though the app consumes data from a quite unreliable source (plain html scraping)
+   native app for shopping online. At that time the app had:
+	150k+ users UK-wise, 4 stars rating on the playstore even though the app consumed data from a quite unreliable source (plain html scraping)
 \item 
 	Implement, maintain and deploy  
 		new features at consistent speed (bi-weely release cycle), without compromising code quality and with proven ability to arrange urgent tasks and contingencies.
@@ -87,7 +84,7 @@
    Android fully native application for 
    Spotlime, a startup aimed  at promoting  the 
    discovery of the best events in Milan, Rome, etc. 6+k users,  4+ stars on the playstore. 
-      \item Implement \emph{from scratch} and mantain the Spotlime android
+      \item Implement \emph{from scratch} and maintain the Spotlime android
 	      native application (i was the only android dev)
       \item 
    Work alongside the marketing team to deliver a user-centric product closer
@@ -100,8 +97,8 @@
 \item Help to develop Spotlime booking desktop website using mainly server-side JSF and
    primefaces.
       \item Self-managed, self motivated, able to work with little or no supervision
-\item Key functionalities: 
-	client-server data synchronization, offline first app managed from scratch, 
+\item Key functionalities: two-way  
+  client-server offline data synchronization from scratch (no realm or similar dbs)
    advanced geolocation and geofencying, Facebook login, push notifications, in-app cc payments.
 \item \textbf{Technologies}: sqlite3, Ormlite, Glide, GA and appsflyer
    \item App is freely available from 
@@ -120,16 +117,19 @@
       promoted 
    quality assurance team leader at Usablenet, a leading 
   technology platform  company delivering enterprise-level mobile and
-  multichannel commerce solutions. Team of 7 QA people, for a total number of 200 projects. 
+  multichannel commerce solutions. Team of 7 QA people, for a total number of 200+ projects for a value of several millions. 
 \item 
-  Working in synergy with mobile web
-   developers, project manager, solution engineer team and customers to
+  Assisting the project manager during all the steps of a project (from ideation to post-release)
+    to scope and define requirements, identify risks and unknowns, and 
    consistently deliver high-quality
-   products that fulfills customer expectations and end user needs. 
+   products that satisfy customer expectations 
 \item Monitor and track project status during all steps, to meet deadlines
    and ensure all scope changes,
  variances and contingences that may arise during the 
  projects lifecycle were visible to all people involved.
+    \item 
+  Working in synergy with mobile web
+    developers, project manager, solution engineer team and customers, proactively wearing different hats to do what was needed to make the project successful (including some decision making)
  \item 
    Ability to prioritize and track multiple projects in parallel,
     manage  allocation of resources within the team, supervise and support my team
@@ -146,10 +146,7 @@
 technical requirements (for example requirements involving
    akamai technologies).
 \item 247 QA support.
-   \item Developing small scripts (mainly using Python+JQL) which help to retrieve project
- information from Atlassian Jira and provide automatic statistical reports about
- project status.
-   \item Personally responsible as QA analyst of:
+   \item Personally responsible as QA analyst of projects of the size of:
    Camelot Group (UK National Lottery, including the
    launch of the mobile website for the new lotto raffle on October 2013), Dell Inc. (22 countries
    including US, UK, China etc), FedEx,
@@ -188,6 +185,8 @@ of Medicine).
 	\item 
    Handling the IT issues in a small office (5 employees): pc, network and
    website maintenance
+    \item 
+      Help organising and coordinating workshops and talks with high schools, university and industries about ethnopsychology, diversity and EU citizenship in the context of European and public sector projects 
 	\end{cvitems}
    }
 \cventry
