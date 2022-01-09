@@ -4,9 +4,10 @@ Currently, it requires `xelatex` or `lualatex` because the underlying document c
 
 ## Todos
 
-* dockerise the build and use github actions to create the artifact and make the pdf downloadable from the release tab
-* remove dependency from `fontspec` and compile it with `pdflatex` 
-* remove dependency from awesome-cv
+* ~dockerise the build and use github actions to create the artifact and make the pdf downloadable from the release tab~
+* make docker dependency explicit, create Makefile, etc so the same docker image can be used to build it locally 
+* remove the dependency from a custom version of awesome-cv
+* consider removing the dependency also from original awesome-cv, so we can compile with `pdflatex`
 * fix legature problems when copy-pasting (probably will solve automatically when removing xelatex and custom fonts)
 
 ## Acknowledgement
