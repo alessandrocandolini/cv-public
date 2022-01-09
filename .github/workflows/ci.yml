@@ -23,11 +23,15 @@ jobs:
         with:
           fetch-depth: 0
 
+      #- name: Compile LaTeX document
+        #uses: xu-cheng/latex-action@v2
+        #with:
+          #latexmk_use_xelatex: true
+          #root_file: cv.tex
+
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        with:
-          latexmk_use_xelatex: true
-          root_file: cv.tex
+        run: | 
+          xelatex cv
 
       - name: Create tag name
         if: github.ref == 'refs/heads/main'
